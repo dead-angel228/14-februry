@@ -15,9 +15,9 @@
             color: #4a4a4a;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Изменено для прокрутки */
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         .container {
@@ -28,6 +28,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             max-width: 600px;
             width: 90%;
+            margin: 50px 0; /* Отступы для прокрутки */
             animation: fadeIn 2s ease-in-out;
         }
 
@@ -51,6 +52,24 @@
             animation: beat 1.5s infinite;
         }
 
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background: #ff6f61;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background: #ff4a3d;
+            transform: translateY(-5px);
+        }
 
         /* Анимации */
         @keyframes fadeIn {
@@ -147,6 +166,28 @@
                 opacity: 0;
             }
         }
+
+        /* Кнопка прокрутки вверх */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff6f61;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
+            display: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-top:hover {
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
@@ -164,12 +205,36 @@
     <div class="container">
         <h1>С Днём Святого Валентина! <span class="heart">❤️</span></h1>
         <p>
-            Дорогая,<br>
+            Дорогой/Дорогая,<br>
             В этот особенный день я хочу сказать тебе, как сильно ты важна для меня. 
             Ты делаешь мою жизнь ярче и счастливее каждый день. 
             Пусть наша любовь будет такой же крепкой и вечной, как звёзды на небе. 
             Спасибо за всё, что ты делаешь для меня. Я люблю тебя! 💖
         </p>
+        <a href="#" class="button">Отправить любовное послание</a>
     </div>
+
+    <!-- Дополнительный контент для прокрутки -->
+    <div class="container">
+        <h2>Ещё немного романтики...</h2>
+        <p>
+            Любовь — это не просто слово, это чувство, которое согревает сердце. 
+            Пусть каждый день с тобой будет таким же прекрасным, как этот праздник. 
+            Ты — моё вдохновение, моя радость и моё счастье. 💕
+        </p>
+    </div>
+
+    <!-- Кнопка прокрутки вверх -->
+    <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Показать/скрыть кнопку прокрутки вверх
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.querySelector('.scroll-top');
+            scrollButton.style.display = window.scrollY > 500 ? 'block' : 'none';
+        });
+    </script>
 </body>
 </html>
