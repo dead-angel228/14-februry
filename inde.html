@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём Святого Валентина!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Общие стили */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #ff6f61, #ffcccb);
+            color: #4a4a4a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5em;
+            color: #ff6f61;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .heart {
+            color: #ff6f61;
+            font-size: 2em;
+            animation: beat 1.5s infinite;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background: #ff6f61;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background: #ff4a3d;
+            transform: translateY(-5px);
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Фоновые сердечки */
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .hearts span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: #ff6f61;
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 75%, 18% 100%, 0% 38%);
+            animation: animateHearts 5s linear infinite;
+            bottom: -150px;
+        }
+
+        .hearts span:nth-child(1) {
+            left: 25%;
+            animation-delay: 0s;
+        }
+
+        .hearts span:nth-child(2) {
+            left: 10%;
+            animation-delay: 2s;
+            animation-duration: 6s;
+        }
+
+        .hearts span:nth-child(3) {
+            left: 70%;
+            animation-delay: 4s;
+        }
+
+        .hearts span:nth-child(4) {
+            left: 40%;
+            animation-delay: 6s;
+            animation-duration: 8s;
+        }
+
+        .hearts span:nth-child(5) {
+            left: 65%;
+            animation-delay: 8s;
+        }
+
+        .hearts span:nth-child(6) {
+            left: 75%;
+            animation-delay: 10s;
+            animation-duration: 7s;
+        }
+
+        @keyframes animateHearts {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Фоновые сердечки -->
+    <div class="hearts">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <h1>С Днём Святого Валентина! <span class="heart">❤️</span></h1>
+        <p>
+            Дорогая,<br>
+            В этот особенный день я хочу сказать тебе, как сильно ты важна для меня. 
+            Ты делаешь мою жизнь ярче и счастливее каждый день. 
+            Пусть наша любовь будет такой же крепкой и вечной, как звёзды на небе. 
+            Спасибо за всё, что ты делаешь для меня. Я люблю тебя! 💖
+        </p>
+        <a href="#" class="button">Отправить любовное послание</a>
+    </div>
+</body>
+</html>
